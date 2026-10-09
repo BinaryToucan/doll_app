@@ -1,6 +1,13 @@
-package com.milka.doll_app.wishlist
+package com.milka.doll_app.wishlist.model
 
-import jakarta.persistence.*
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.time.Instant
 
 /**
@@ -8,7 +15,7 @@ import java.time.Instant
  */
 @Entity
 @Table(name = "wishlist_items")
-class WishlistItem(
+class Item(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
@@ -21,7 +28,11 @@ class WishlistItem(
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    var category: ProductCategory,
+    var category: ItemCategory,
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    var status: ItemStatus = ItemStatus.Want,
 
     @Column(name = "product_url", nullable = false, length = 1000)
     var url: String,

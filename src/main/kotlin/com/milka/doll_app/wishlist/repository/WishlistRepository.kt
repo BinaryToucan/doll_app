@@ -1,5 +1,6 @@
-package com.milka.doll_app.wishlist
+package com.milka.doll_app.wishlist.repository
 
+import com.milka.doll_app.wishlist.model.Item
 import org.springframework.data.jpa.repository.JpaRepository
 
 /**
@@ -7,4 +8,4 @@ import org.springframework.data.jpa.repository.JpaRepository
  *
  * Spring Data JPA автоматически предоставляет CRUD-операции
  */
-interface WishlistItemRepository : JpaRepository<WishlistItem, Long>
+interface WishlistRepository : JpaRepository<Item, Long>

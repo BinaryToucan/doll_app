@@ -1,9 +1,9 @@
-package com.milka.doll_app.wishlist
+package com.milka.doll_app.wishlist.model
 
 /**
  * Категории возможный продуктов
  */
-enum class ProductCategory {
+enum class ItemCategory {
     DOLL,
     CLOTHES,
     ACCESSORIES,
